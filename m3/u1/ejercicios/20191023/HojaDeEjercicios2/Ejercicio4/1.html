@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hoja de Ejercicios 2 Ejercicio4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <?php
+            $s;
+            $j;
+            $k;
+            $i;
+            $a = 2.345;
+            
+            $s = 0;
+            for ($j = 1; $j <= 4; $j++) {
+                echo $j;
+                if ($j % 2 == 0) {
+                    $s+=$j;
+                }
+            }
+            printf("<br>%d", $j);
+            var_dump($s);
+            $i = 10;
+            while ($i > 0) {
+                $i = $i - 1;
+            }
+            echo $i;
+            echo gettype($i) . "<br>";
+            print_r($i);
+            var_dump($a);
+        ?>
+    </body>
+</html>

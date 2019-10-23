@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hoja de Ejercicios 2 Ejercicio7</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <?php
+            $alumnos=array();
+            $alumnos[]="Ramon";
+            $alumnos[]="Jose";
+            $alumnos[]="Pepe";
+            $alumnos[]="Ana";
+            
+            $alumnos1=array("Ramon","Jose","Pepe","Ana");
+            
+            for($c=0;$c<count($alumnos);$c++) {
+                echo "$alumnos[$c]<br>";
+            }
+            
+            foreach ($alumnos1 as $value) {
+                echo "$value<br>";
+            }
+        ?>
+    </body>
+</html>

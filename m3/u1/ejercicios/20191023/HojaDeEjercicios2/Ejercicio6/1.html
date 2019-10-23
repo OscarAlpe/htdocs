@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hoja de Ejercicios 2 Ejercicio6</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <?php
+            $alumnos = array("Ramon", "Jose", "Pepe", "Ana");
+            
+            for ($c=0; $c<4;$c++) {
+                if ($c > 1) echo "<br>";
+                echo $alumnos[$c];
+            }
+        ?>
+        <div>
+            <?php
+                for($c=0;$c<4;$c++) {
+                    echo "$alumnos[$c]";
+                    if ($c<3) echo "<br>";
+                }
+            ?>
+        </div>
+    </body>
+</html>
