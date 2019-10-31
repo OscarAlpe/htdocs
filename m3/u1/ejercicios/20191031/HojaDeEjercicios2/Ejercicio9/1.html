@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hoja de ejercicios 2 Ejercicio 9</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <?php
+            $nombreCompleto="Ramon Abramo - ramon@alpeformacion.es";
+            for ($i=0; $i<strlen($nombreCompleto); $i++) {
+                echo $nombreCompleto[$i]."-";
+            }
+            
+            $vArray=str_split($nombreCompleto);
+            foreach ($vArray as $valor) {
+                echo "<br>$valor";
+            }
+        ?>
+    </body>
+</html>
