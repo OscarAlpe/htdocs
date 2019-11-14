@@ -2,44 +2,43 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Hoja de Ejercicios 4 / Ejercicio 9</title>
+        <title>Hoja de Ejercicios 4 / Ejercicio 10</title>
     </head>
     <body>
         <?php
-            $suma=0;
             if (isset($_GET["enviar"])) {
                 $num = 0;
-
+                $oculto = 123;
+                
                 $num = $_GET["num"];
-                if (isset($_GET["suma"])) {
-                    $suma = $_GET["suma"];
-                }
-
-                if ($num >= 0) {
-                    $suma += $num;
+                
+                if ($num!=$oculto) {
+                    if ($num>$oculto) {
+                        $salida = "Te pasas";
+                    } else {
+                        $salida = "No llegas";
+                    }
                     echo "<form action=\"index.php\" method=\"get\">";
                     echo "<div>";
                     echo "Introduce número ";
                     echo "<input name=\"num\">";
-                    echo "<input name=\"suma\" type=\"hidden\" value=\"$suma\">";
                     echo "</div>";
                     echo "<button name=\"enviar\">Enviar</button>";
                     echo "</form>";
                 } else {
-                    $salida = "La suma es:$suma";
-                    echo "<div>";
-                    echo $salida;
-                    echo "</div>";
+                    $salida = "FIN";
                 }
+                
+                echo $salida;
             } else {
         ?>
                 <form action="index.php" method="get">
-                    <div>
-                        <text>Introduce número </text>
-                        <input name="num">
-                    </div>
-                    <button name="enviar">Enviar</button>
-                </form>
+                     <div>
+                         <text>Introduce número </text>
+                         <input name="num">
+                     </div>
+                     <button name="enviar">Enviar</button>
+                 </form>
         <?php
             }
         ?>
