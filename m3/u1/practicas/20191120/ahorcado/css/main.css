@@ -1,0 +1,82 @@
+.fallos{
+    color: red;
+}
+
+body{
+    background-image: url(../imgs/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#fondo{
+    background-image: url(../imgs/fondo.png);
+    background-repeat: no-repeat;
+    width:400px;
+    height: 400px;
+    margin:0px auto;
+    position:relative;
+}
+
+#cabeza{
+    position:absolute;
+    top:150px;
+    left:95px;
+    background-image: url(../imgs/cabeza.png);
+    width:82px;
+    height: 105px;
+}
+
+#cuerpo{
+    position:absolute;
+    top:250px;
+    left:95px;
+    background-image: url(../imgs/cuerpo.png);
+    width:90px;
+    height: 74px;
+}
+
+#brazoizq{
+    position:absolute;
+    top:265px;
+    left:55px;
+    background-image: url(../imgs/brazoizq.png);
+    width:47px;
+    height: 45px;
+}
+
+#brazoder{
+    position:absolute;
+    top:265px;
+    left:165px;
+    background-image: url(../imgs/brazoder.png);
+    width:42px;
+    height: 45px;
+}
+
+#piernader{
+    position:absolute;
+    top:315px;
+    left:135px;
+    background-image: url(../imgs/piernader.png);
+    width:38px;
+    height: 96px;
+}
+
+#piernaizq{
+    position:absolute;
+    top:315px;
+    left:95px;
+    background-image: url(../imgs/piernaizq.png);
+    width:42px;
+    height: 96px;
+}
+
+#cabezamuerta{
+    position:absolute;
+    top:150px;
+    left:95px;
+    background-image: url(../imgs/cabezamuerta.png);
+    width:82px;
+    height: 105px;
+}
