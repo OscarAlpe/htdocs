@@ -22,10 +22,8 @@
             
             print "<p>Longitud: $longitud</p>";
         ?>
-        <svg width="<?= $longitud ?>px" height="10px">
-            <?php
-                echo '<line id="miLinea" x1="1" y1="5" x2="' . $longitud . '" y2="5" stroke="red" stroke-width="10" >';
-            ?>
+        <svg width="1000px" height="10px">
+        <line id="miLinea" x1="1" y1="5" x2="<?=$longitud?>" y2="5" stroke="red" stroke-width="10" >';
         </svg>
     </body>
 </html>
