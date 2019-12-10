@@ -35,9 +35,13 @@
                     "PA" => "palencia",
                     "PO" => "potes",
                 ];
-                echo "los elementos seleccionados son: ";
-                foreach ($_GET["ciudad"] as $value) {
-                    echo "<br>$value-$ciudades[$value]"; // muestra codigos
+                if (isset($_GET["ciudad"])) {
+                    echo "los elementos seleccionados son: ";
+                    foreach ($_GET["ciudad"] as $value) {
+                        echo "<br>$value-$ciudades[$value]"; // muestra codigos
+                    }
+                } else {
+                    echo "No se ha seleccionado ningún elemento.";
                 }
             }
         ?>
