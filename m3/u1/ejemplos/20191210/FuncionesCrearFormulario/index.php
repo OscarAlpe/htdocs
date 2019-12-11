@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
 
         <title>Funciones Crear Formulario</title>
     </head>
@@ -15,7 +16,7 @@
             
             $cajas = [ "nombre" => [
                             "id" => "inombre",
-                            "class" => "clasenombre",
+                            "class" => "form-control col-sm-4",
                             "style" => [
                                 "background-color"=>"lightgray",
                             ],
@@ -25,7 +26,7 @@
                         ],
                         "apellidos" => [
                             "id" => "iapellidos",
-                            "class" => "claseapellidos text-left",
+                            "class" => "form-control col-sm-4 text-rigth",
                             "style" => [
                                 "background-color"=>"lightgreen",
                             ],
@@ -34,7 +35,7 @@
                         ],
                         "ciudad" => [
                             "id" => "iciudad",
-                            "class" => "claseciudad",
+                            "class" => "form-control col-sm-4",
                             "value"=>"Ciudad",
                             "buttons"=>[
                                 [
@@ -60,18 +61,20 @@
             $controlesTexto = crearTextos($cajas);
             $controlesRadioButtons = crearRadioButtons($cajas);
         ?>
-        <div class="align-content-center">
+        <div class="m-sm-3">
             <form name="f" method="get">
-                <div>
+                <div class="form-group row">
                     <?= $controlesTexto["nombre"] ?>
                 </div>
-                <div>
+                <div class="form-group row">
                     <?= $controlesTexto["apellidos"] ?>
                 </div>
-                <div>
-                    <?= $controlesRadioButtons["ciudad"] ?>
-                </div>
-                <button class=""btn">Enviar</button>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <?= $controlesRadioButtons["ciudad"] ?>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
         <!-- Optional JavaScript -->
