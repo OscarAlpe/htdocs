@@ -14,7 +14,8 @@
         <?php
             require_once 'funciones.php';
             
-            $cajas = [ "nombre" => [
+            $cajas = [ 
+                        "nombre" => [
                             "id" => "inombre",
                             "class" => "form-control col-sm-4",
                             "style" => [
@@ -31,8 +32,19 @@
                                 "background-color"=>"lightgreen",
                             ],
                             "value"=>"Mis apellidos",
-                            "type"=>"text",
                         ],
+                        "fecha" => [
+                            "id" => "ifecha",
+                            "class" => "form-control col-sm-4 text-rigth",
+                            "style" => [
+                                "background-color"=>"lightblue",
+                            ],
+                            "value"=>"Fecha",
+                            "type"=>"date",
+                        ],
+                    ];
+            
+            $radioButtons = [
                         "ciudad" => [
                             "id" => "iciudad",
                             "class" => "form-control col-sm-4",
@@ -42,26 +54,62 @@
                                     "id"=>"iSantander",
                                     "value"=>"SA",
                                     "label"=>"Santander",
+                                    "style" => [
+                                      "background-color"=>"lightgreen",
+                                    ],
                                 ],
                                 [
                                     "id"=>"iPotes",
                                     "value"=>"PO",
                                     "label"=>"Potes",
+                                    "style" => [
+                                      "background-color"=>"lightblue",
+                                    ],
                                 ],
                                 [
                                     "id"=>"iPalencia",
                                     "value"=>"PA",
                                     "label"=>"Palencia",
+                                    "style" => [
+                                      "background-color"=>"lightyellow",
+                                    ],
                                 ],
                             ],
-                            "type"=>"radiobutton",
+                        ],
+                        "calle" => [
+                            "id" => "icalle",
+                            "class" => "form-control col-sm-4",
+                            "value"=>"Calle",
+                            "buttons"=>[
+                                [
+                                    "id"=>"iJuanHerrera",
+                                    "value"=>"JH",
+                                    "label"=>"Juan de Herrera",
+                                    "style" => [
+                                      "background-color"=>"lightpink",
+                                    ],
+                                ],
+                                [
+                                    "id"=>"iCisneros",
+                                    "value"=>"CI",
+                                    "label"=>"Cisneros",
+                                    "style" => [
+                                        "background-color"=>"lightgray",
+                                    ],
+                                ],
+                                [
+                                    "id"=>"iCamiloAlonsoVega",
+                                    "value"=>"CAV",
+                                    "label"=>"Camilo Alonso Vega",
+                                ],
+                            ]
                         ],
                     ];
             
             $controlesTexto = crearTextos($cajas);
-            $controlesRadioButtons = crearRadioButtons($cajas);
+            $controlesRadioButtons = crearRadioButtons($radioButtons);
         ?>
-        <div class="m-sm-3">
+        <div class="m-sm-3" style="border:3px solid grey; padding: 10px 10px;">
             <form name="f" method="get">
                 <div class="form-group row">
                     <?= $controlesTexto["nombre"] ?>
@@ -69,9 +117,17 @@
                 <div class="form-group row">
                     <?= $controlesTexto["apellidos"] ?>
                 </div>
+                <div class="form-group row">
+                    <?= $controlesTexto["fecha"] ?>
+                </div>
                 <fieldset class="form-group">
                     <div class="row">
                         <?= $controlesRadioButtons["ciudad"] ?>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <?= $controlesRadioButtons["calle"] ?>
                     </div>
                 </fieldset>
                 <button type="submit" class="btn btn-primary">Enviar</button>
