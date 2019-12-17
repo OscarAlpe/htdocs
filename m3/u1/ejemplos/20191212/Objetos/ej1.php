@@ -8,6 +8,10 @@ echo $a->getCadena(true) . "<br>";
 echo $b->getCadena(true) . "<br>";
 
 echo $a->getNumeroVocales() . "<br>" ;
-$b->setCadena("Texto para pruebas");
+$b->setCadena("Texto párA pruebas");
 echo $b->getCadena(true) . "<br>";
 echo $b->getNumeroVocales() . "<br>";
+
+echo $b->getNumeroNoVocales() . "<br>";
+
+var_dump($b->getFrecuenciaVocales());

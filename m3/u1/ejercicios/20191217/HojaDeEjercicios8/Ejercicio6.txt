@@ -1,0 +1,17 @@
+Este es mi coche
+Object(Vehiculo)[1]
+	public 'matricula' => string 'DHH2323'  (Length=7)
+	private 'color' => string 'rojo'  (Length=4)
+	protected 'encendido' => boolean false
+
+5Este es mi coche
+
+Error al intentar acceder a la propiedad public static desde una instancia de la clase.
+
+Habría que crear un setter para poder modificarle desde la instancia:
+
+public function setRuedas($ruedas) {
+	Vehiculo::$ruedas = $ruedas;
+}
+
+Error al intentar acceder a $coche->ruedas, hay que escribir $coche->ruedas() para acceder a la propiedad public static.

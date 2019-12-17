@@ -1,0 +1,5 @@
+Object(Coche)[1]
+	public 'color' => string 'Rojo'  (Length=4)
+	public 'numero_puertas' => int 4
+	public 'marca' => string 'Honda'  (Length=5)
+	public 'gasolina' => int 7

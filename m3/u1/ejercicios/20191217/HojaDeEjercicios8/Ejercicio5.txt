@@ -1,0 +1,7 @@
+Object(Vehiculo)[1]
+	public 'matricula' => string 'DHH2323' (Length=7)
+	private 'color' => string 'rojo'  (Length=4)
+	protected 'encendido' => boolean false
+Vehiculo apagado
+
+Daría un error al instanciar la clase porque no existe constructor sin parámetros o que tengan valor por defecto.

@@ -1,0 +1,19 @@
+defecto
+Object(Usuario)[1]
+	public 'nombre' => string 'defecto' (Length=7)
+	private 'edad' => int 51
+	protected 'telefono' => string(6) -> "232323"  (Length=6)
+	private 'apellidos' => string 'vazquez rodriguez'  (Length=17)
+	private 'nombreCompleto' => string 'defecto vazquez rodriguez'  (Length=25)
+Object(Usuario)[1]
+	public 'nombre => string 'Ramon'  (Length=5)
+	private 'edad => int 51
+	protected 'telefono' => string '232323'  (Length=6)
+	private 'apellidos' => string 'vazquez rodriguez'  (Length=17)
+	private 'nombreCompleto' => string 'defecto vazquez rodriguez'  (Length=25)
+Object(Usuario)[1]
+	public 'nombre' => string 'Ramon'  (Length=5)
+	private 'edad' => int 51
+	protected 'telefono' => string '232323'  (Length=6)
+	private 'apellidos' => string 'vazquez rodriguez'  (Length=17)
+	private 'nombreCompleto' => string 'Ramon vazquez rodriguez'  (Length=25)

@@ -1,0 +1,7 @@
+defecto
+Object(Usuario)[1]
+	public 'nombre' => string 'defecto' (Length=7)
+	private 'edad' => int 51
+	protected 'telefono' => string '232323' (Length=6)
+
+Error al intentar acceder a edad porque es private.

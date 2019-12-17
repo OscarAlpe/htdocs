@@ -1,0 +1,3 @@
+defecto
+Object(Usuario)[1]
+	public 'nombre' => string 'Silvia' (Length=6)
