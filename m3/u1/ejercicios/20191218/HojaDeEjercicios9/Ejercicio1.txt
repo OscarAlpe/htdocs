@@ -1,0 +1,8 @@
+Vehiculo encendido
+Se ha cargado cantidad: 10
+Camion encendido
+Vehiculo apagado
+Vehiculo encendido
+Se han subido 5 pasajeros
+Autobus encendido
+Vehiculo apagado

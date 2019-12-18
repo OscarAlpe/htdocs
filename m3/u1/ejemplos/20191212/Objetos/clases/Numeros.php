@@ -8,15 +8,18 @@ class Numeros extends Vector {
     public function __construct($valores = []) {
         parent::__construct($valores);
         
-        $this->setModa();
-        $this->setMedia();
+        $this->setValores($valores);
     }
 
     private function setModa() {
-        $values = array_count_values($this->valores);
-        $mode = array_search(max($values), $values);
-        
-        $this->moda = $mode;
+        if ($this->valores != null AND (count($this->valores) > 0)) {
+            $values = array_count_values($this->valores);
+            $mode = array_keys($values, max($values));
+
+            $this->moda = $mode;
+        } else {
+            $this->moda = null;
+        }
     }
     
     public function getMedia() {
@@ -24,11 +27,22 @@ class Numeros extends Vector {
     }
     
     private function setMedia() {
-        $a = array_filter($this->valores);
-        if(count($a)) {
-            $average = array_sum($a)/count($a);
+        $this->media = null;
+
+        if ($this->getValores() != null AND (count($this->getValores()) > 0)) {
+            $a = array_filter($this->getValores());
+            if(count($a)) {
+                $average = array_sum($a)/count($a);
+                $this->media = $average;
+            }
         }
-        
-        $this->media = $average;
     }
+    
+    public function setValores($valores) {
+        parent::setValores($valores);
+        
+        $this->setModa();
+        $this->setMedia();
+    }
+
 }

@@ -1,0 +1,15 @@
+Object(Persona)[1]
+	private 'nombre' => string 'ramon' (Length=5)
+	private 'apellidos' => string 'abramo' (Length=6)
+	private 'nombreCompleto' => string 'ramon abramo' (Length=12)
+	protected 'edad' => int 100
+Object(Persona)[1]
+	private 'nombre' => string 'ramon' (Length=5)
+	private 'apellidos' => string 'abramo' (Length=6)
+	private 'nombreCompleto' => string 'ramon abramo' (Length=12)
+	protected 'edad' => int 100
+Object(Persona)[2]
+	private 'nombre' => string 'ramon' (Length=5)
+	private 'apellidos' => string 'abramo' (Length=6)
+	private 'nombreCompleto' => string 'ramon abramo' (Length=12)
+	protected 'edad' => int 50

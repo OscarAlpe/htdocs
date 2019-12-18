@@ -13,7 +13,11 @@ class Vector {
     }
 
     private function setMaximo() {
-        $this->maximo = max($this->getValores());
+        if (($this->getValores() != null) AND count($this->getValores()) > 0) {
+            $this->maximo = max($this->getValores());
+        } else {
+            $this->maximo = null;
+        }
     }
 
     public function getValores() {
