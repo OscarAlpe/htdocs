@@ -2,7 +2,11 @@
 
 namespace clases;
 
-class Estudiante {
+class Estudiante extends Persona {
     private $carrera;
     public $notas = [];
+    
+    private function getNotas() {
+        
+    }
 }

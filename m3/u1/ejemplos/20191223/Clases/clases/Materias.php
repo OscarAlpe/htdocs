@@ -3,5 +3,6 @@
 namespace clases;
 
 class Materias {
-    //put your code here
+    public $nombre;
+    private $horas;
 }
