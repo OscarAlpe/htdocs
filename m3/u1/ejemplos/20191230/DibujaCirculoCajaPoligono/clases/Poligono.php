@@ -24,11 +24,11 @@ class Poligono extends Figura {
 
     }
 
-    public function getPuntos() {
+    private function getPuntos() {
         return $this->puntos;
     }
 
-    public function setPuntos($puntos) {
+    private function setPuntos($puntos) {
         $this->puntos = $puntos;
         return $this;
     }

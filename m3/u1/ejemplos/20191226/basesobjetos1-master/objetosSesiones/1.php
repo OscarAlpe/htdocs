@@ -14,7 +14,7 @@
     </head>
     <body>
         <?php
-        if(!isset($_REQUEST["objeto"])){
+        if(!isset($_SESSION["objeto"])){
             $_SESSION["objeto"]= new Hombre("ramon",12);
         }else{
             $_SESSION["objeto"]= unserialize($_SESSION["objeto"]);

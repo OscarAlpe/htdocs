@@ -16,9 +16,9 @@ class Cifrado {
         
         foreach ($this->getACifrado() as $value) {
             foreach ($value as $v) {
-                $this->rota($v);
+                $this->setACifrado($this->rota($v));
             }
-        }
+        }     
     }
     
     public function getFrase() {
@@ -55,14 +55,17 @@ class Cifrado {
 
     private function rota($s) {
         $t = $s[strlen($s)-1];
-        for ($i=0; $i<strlen($s); $i++) {
-            $p = $s[$i];
-            if ($i==0) {
-                $s[$i] = $t;
+        $salida = "";
+        for ($i=-1; $i<strlen($s)-1; $i++) {
+            $p_sig = $s[$i];
+            if ($i == -1) {
+                $salida .= $t;
             } else {
-                $s[$i] = $p;
+                $salida .= $p_sig;
             }
         }
+        
+        return $salida;
     }
 
 }

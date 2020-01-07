@@ -8,11 +8,11 @@ class Figura {
     private $ancho;
     private $alto;
     
-    public function getColor() {
+    protected function getColor() {
         return $this->color;
     }
 
-    public function getFondo() {
+    protected function getFondo() {
         return $this->fondo;
     }
 
