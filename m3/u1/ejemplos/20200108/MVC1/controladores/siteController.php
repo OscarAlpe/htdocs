@@ -1,5 +1,9 @@
 <?php
+
 namespace controladores;
+
+use clases\Palabra;
+use clases\Numero;
 
 class siteController extends Controller{
     private $miPie;
@@ -47,7 +51,7 @@ class siteController extends Controller{
                       "vista"=>$vista,
                       "pie"=>$pieEstabanOrdenados,
                       "resultado"=>$vs,
-                      "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio1"))->html()
+                      "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 1"))->html()
                     ]);
     }
     
@@ -57,17 +61,34 @@ class siteController extends Controller{
         if (empty($objeto->getValores())) {
             $vista = "ejercicio2";
         } else {
-            
-            $resultado = "La cadena contiene " . strlen($objeto->getValores()["texto"]) . " vocales.";
+            $p = new Palabra($objeto->getValores()["texto"]);
+            $resultado = $p->vocales();
             $vista = "resultadoEjercicio2";
         }
         $this->render([
             "vista"=>$vista,
             "pie"=>$this->miPie,
-            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio2"))->html(),
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 2"))->html(),
             "resultado"=>$resultado,
         ]);
         
+    }
+
+    public function ejercicio3Accion() {
+        
+        $a = [2, 4, 2, 8, 10, 12, 8, 16, 18, 20];
+
+        $n = new Numero($a);
+
+        $this->render([
+            "vista"=>"resultadoEjercicio3",
+            "pie"=>$this->miPie,
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 3"))->html(),
+            "media_aritmetica"=>$n->getMediaAritmetica(),
+            "moda"=>$n->getModa(),
+            "mediana"=>$n->getMediana(),
+            "desviacion_tipica"=>$n->getDesviacionTipica(),
+        ]);
     }
 
 }

@@ -1,2 +1,2 @@
 <?php
-    echo $this->resultado;
+    echo "La cadena contiene " . $this->resultado . " vocales.";

@@ -1,0 +1,1 @@
+Coordenadas de Paradas de Autobuses guardadas

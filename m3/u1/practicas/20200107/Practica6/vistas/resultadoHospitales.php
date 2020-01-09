@@ -1,0 +1,1 @@
+Coordenadas de Hospitales guardadas
