@@ -47,7 +47,7 @@ class Fichero {
     }
     
     public function escribirCadena($cadena) {
-        fwrite($this->puntero, $cadena);
+        return fwrite($this->puntero, $cadena);
     }
     
     public function escribir($cadena) {
