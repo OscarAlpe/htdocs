@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Hoja de Ejercicios 10 - Ejercicio 3</title>
     </head>
     <body>
         <?php
             spl_autoload_register(function ($nombre_clase) {
-                include $nombre_clase . '.php';
+                include str_replace("\\", DIRECTORY_SEPARATOR, $nombre_clase) . '.php';
             });
             
             use clases\Conexion;
@@ -23,10 +23,12 @@
             $a = $c->coge_todos(MYSQLI_ASSOC);
             var_dump($a);
             
-            $c->setCampos("id, nombre, apellidos");
-            $c->setTabla("actor");
-            $c->consultaCamposTabla();
-            echo $c->listar_registros();
+            $c2 = new Conexion();
+            $c2->seleccionar("videoteca");
+            $c2->setCampos("*");
+            $c2->setTabla("pelicula");
+            $c2->consultaCamposTabla();
+            echo $c2->listar_registros();
         ?>
     </body>
 </html>

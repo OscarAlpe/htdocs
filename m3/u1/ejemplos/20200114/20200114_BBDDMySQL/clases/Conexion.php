@@ -52,6 +52,7 @@ class Conexion {
     
     public function seleccionar($db){
         $this->conexion->select_db($db);
+        $this->castellano();
     }
     
     public function castellano() {
