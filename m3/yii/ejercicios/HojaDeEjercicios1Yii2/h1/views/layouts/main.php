@@ -39,10 +39,16 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Hola', 'url' => ['/site/hola']],
-            ['label' => 'Mensaje', 'url' => ['/site/mensaje']],
-            ['label' => 'Actores', 'url' => ['/actor']], // Coge index por defecto
-            ['label' => 'Pelicula', 'url' => ['/site/pelicula']],
+            ['label' => 'Mostrar', 'url' => ['/site/mostrar']],
+            ['label' => 'Listados', 'items' => [
+                ['label' => 'Listar', 'url' => ['/site/listar']],
+                ['label' => 'Listar1', 'url' => ['/site/listar1']],
+                ['label' => 'Listar2', 'url' => ['/site/listar2']],
+                ['label' => 'Listar3', 'url' => ['/site/listar3']],
+                ['label' => 'Listar4', 'url' => ['/site/listar4']],
+                ['label' => 'Listar5', 'url' => ['/site/listar5']],
+                ['label' => 'Listar6', 'url' => ['/site/listar6']],
+            ]]
         ],
     ]);
     NavBar::end();
@@ -59,9 +65,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">Desarrollado en clase de Programación de Aplicaciones</p>
+        <p class="pull-left">&copy; Oscar Megía López <?= date('Y') ?></p>
 
-        <p class="pull-right">2020</p>
+        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 
