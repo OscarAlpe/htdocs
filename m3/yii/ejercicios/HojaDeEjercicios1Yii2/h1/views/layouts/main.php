@@ -39,7 +39,6 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Mostrar', 'url' => ['/site/mostrar']],
             ['label' => 'Listados', 'items' => [
                 ['label' => 'Listar', 'url' => ['/site/listar']],
                 ['label' => 'Listar1', 'url' => ['/site/listar1']],
@@ -48,7 +47,9 @@ AppAsset::register($this);
                 ['label' => 'Listar4', 'url' => ['/site/listar4']],
                 ['label' => 'Listar5', 'url' => ['/site/listar5']],
                 ['label' => 'Listar6', 'url' => ['/site/listar6']],
-            ]]
+            ]],
+            ['label' => 'Mostrar', 'url' => ['/site/mostrar']],
+            ['label' => 'Mostrar Registro', 'url' => ['/site/mostraruno']],
         ],
     ]);
     NavBar::end();

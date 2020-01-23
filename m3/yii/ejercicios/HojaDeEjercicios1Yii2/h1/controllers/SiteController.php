@@ -83,10 +83,19 @@ class SiteController extends Controller
     public function actionMostrar() {
         $dataProvider = new ActiveDataProvider([
             'query' => Entradas::find(),
+            'pagination' => [
+                'pageSize' => 2,
+            ],
         ]);
         
         return $this->render('mostrar', [
             'dataProvider' => $dataProvider,
+        ]);
+    }
+    
+    public function actionMostraruno() {
+        return $this->render('mostrarUno', [
+            'model' => Entradas::findOne(1),
         ]);
     }
 }
