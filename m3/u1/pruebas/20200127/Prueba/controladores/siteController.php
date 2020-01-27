@@ -11,7 +11,7 @@ class siteController extends Controller{
 
     public function __construct() {
         parent::__construct();
-        $this->miPie = "Prueba 20200127 de clase";
+        $this->miPie = "";
         $this->miMenu = [
                           "Inicio"=>$this->crearRuta(["accion"=>"index"]),
                         ];
