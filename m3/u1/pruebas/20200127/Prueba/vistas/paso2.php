@@ -8,17 +8,18 @@
     <br />
     <div style="width: 90%; margin: 0 auto; display: block;">
         <div style="height: 40px;">
-           Escriba un número (0 < número ≤ 10) y dibujaré una tabla de una columna de ese tamaño con cajas de texto en cada celda.
+           Escriba la palabra en cada caja de texto y le diré si ha repetido alguna
        </div>
     
-        <form name="formulario" action="<?= $this->crearRuta(["accion"=>"paso2"]) ?>" method="get">
-            <fieldset style="border: solid; border-color: gray; height: 15%;">
-                <legend style="border: solid; border-color: gray; background-color: white;">Ejercicio 1</legend>
+        <form name="formulario" action="<?= $this->crearRuta(["accion"=>"paso3"]) ?>" method="get">
+            <fieldset style="border: solid; border-color: gray;">
+                <legend style="border: solid; border-color: gray; background-color: white;">Ejercicio 1-Paso 2</legend>
                 <div>
-                    <label for="ttabla">Tamaño de la tabla</label>
-                    <input name="ttabla" id="ttabla" type="number" required placeholder="Introduce un numero" />
+                    <?php
+                      echo $this->r->dibuja();
+                    ?>
                     <div style="float: right;">
-                        <button name="dibujar" value="1">Dibujar</button>
+                        <button name="comprobar" value="1">Comprobar</button>
                         <button name="restablecer" value="1">Restablecer</button>
                     </div>
                 </div>

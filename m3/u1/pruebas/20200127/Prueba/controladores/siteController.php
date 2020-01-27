@@ -2,8 +2,7 @@
 
 namespace controladores;
 
-use clases\Palabra;
-use clases\Numero;
+use clases\Renderiza;
 
 class siteController extends Controller{
     private $miPie;
@@ -15,14 +14,10 @@ class siteController extends Controller{
         $this->miMenu = [
                           "Inicio"=>$this->crearRuta(["accion"=>"index"]),
                         ];
-        if (!isset($_SESSION["coordenadasHospitales"])) {
-            $_SESSION["coordenadasHospitales"] = "";
-        }
-        if (!isset($_SESSION["coordenadasRestaurantes"])) {
-            $_SESSION["coordenadasRestaurantes"] = "";
-        }
-        if (!isset($_SESSION["coordenadasAutobuses"])) {
-            $_SESSION["coordenadasAutobuses"] = "";
+        if (!isset($_SESSION["r"])) {
+            $_SESSION["r"] = new Renderiza();
+        } else {
+            $_SESSION["r"] = unserialize($_SESSION["r"]);
         }
     }
 
@@ -34,4 +29,34 @@ class siteController extends Controller{
         ]);
     }
 
+    public function paso2Accion($objeto){
+        if (!empty($objeto->getValores())) {
+            $_SESSION["r"]->setTTabla($objeto->getValores()["ttabla"]);
+        }
+        $this->render([
+            "vista"=>"paso2",
+            "pie"=>$this->miPie,
+            "menu"=>(new \clases\Menu($this->miMenu, "Inicio"))->html(),
+            "r"=>$_SESSION["r"],
+        ]);
+    }
+
+    public function paso3Accion($objeto){
+        $vista="paso3";
+        if (!empty($objeto->getValores())) {
+            if (isset($objeto->getValores()["restablecer"])) {
+                $vista = "paso2";
+            }
+        }
+        $this->render([
+            "vista"=>$vista,
+            "pie"=>$this->miPie,
+            "menu"=>(new \clases\Menu($this->miMenu, "Inicio"))->html(),
+            "r"=>$_SESSION["r"],
+        ]);
+    }
+    
+    public function __destruct() {
+        $_SESSION["r"] = serialize($_SESSION["r"]);
+    }
 }
