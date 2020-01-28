@@ -3,6 +3,9 @@
 namespace controladores;
 
 use clases\Renderiza;
+use clases\Fichero;
+use clases\Numeros;
+use clases\BaseDatos;
 
 class siteController extends Controller{
     private $miPie;
@@ -10,7 +13,7 @@ class siteController extends Controller{
 
     public function __construct() {
         parent::__construct();
-        $this->miPie = "";
+        $this->miPie = "<hr><div>Esta página forma parte del curso Desarrollo de aplicaciones con tecnologias Web</div><br /><br />Autor: Oscar Megía";
         $this->miMenu = [
                           "Inicio"=>$this->crearRuta(["accion"=>"index"]),
                         ];
@@ -37,22 +40,38 @@ class siteController extends Controller{
             "vista"=>"paso2",
             "pie"=>$this->miPie,
             "menu"=>(new \clases\Menu($this->miMenu, "Inicio"))->html(),
-            "r"=>$_SESSION["r"],
+            "dibuja"=>$_SESSION["r"]->dibuja(),
         ]);
     }
 
     public function paso3Accion($objeto){
         $vista="paso3";
-        if (!empty($objeto->getValores())) {
-            if (isset($objeto->getValores()["restablecer"])) {
-                $vista = "paso2";
-            }
-        }
+
+        $f = new Fichero("C:\\WINDOWS\\TEMP\\salidas.txt", "a");
+        $n = new Numeros($objeto->getValores()["numeros"]);
+        
+        $f->abrirFichero();
+        
+        $repetidos = $n->numerosRepetidos();
+        $tRellenado = $n->rellenado($f);
+        $f->escribirLinea($repetidos);
+        $f->escribirLinea($tRellenado);
+
+        // Se conecta a la BBDD examen1 (examen ya existía)
+        $bbdd = new BaseDatos("127.0.0.1", "root", "", "examen1");
+        $mensaje = $bbdd->devuelveAleatorio("SELECT * FROM mensajes", "texto");
+        
+        $f->escribirLinea($mensaje);
+        
+        $f->cerrarFichero();
+        
         $this->render([
             "vista"=>$vista,
             "pie"=>$this->miPie,
             "menu"=>(new \clases\Menu($this->miMenu, "Inicio"))->html(),
-            "r"=>$_SESSION["r"],
+            "repetidos"=>$repetidos,
+            "rellenado"=>$tRellenado,
+            "mensaje"=>$mensaje,
         ]);
     }
     

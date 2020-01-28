@@ -13,26 +13,15 @@
     
         <form name="formulario" action="<?= $this->crearRuta(["accion"=>"paso3"]) ?>" method="get">
             <fieldset style="border: solid; border-color: gray;">
-                <legend style="border: solid; border-color: gray; background-color: white;">Ejercicio 1-Paso 2</legend>
+                <legend style="border: solid; border-color: gray; background-color: white; margin-left: 20px;">Ejercicio 1-Paso 2</legend>
                 <div>
-                    <?php
-                      echo $this->r->dibuja();
-                    ?>
-                    <div style="float: right;">
+                    <?= $this->dibuja ?>
+                    <div style="float: right; margin-bottom: 10px; margin-right: 10;">
                         <button name="comprobar" value="1">Comprobar</button>
-                        <button name="restablecer" value="1">Restablecer</button>
+                        <button name="restablecer" type="reset">Restablecer</button>
                     </div>
                 </div>
             </fieldset>
-
-            <hr>
-            <div>
-                Esta página forma parte del curso Desarrollo de aplicaciones con tecnologias Web
-            </div>
-            <br />
-            <br />
-            Autor: Oscar Megía
-
         </form>
     </div>
 </div>

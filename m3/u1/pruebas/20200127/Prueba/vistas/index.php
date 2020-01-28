@@ -9,29 +9,19 @@
     <div style="width: 90%; margin: 0 auto; display: block;">
         <div style="height: 40px;">
            Escriba un número (0 < número ≤ 10) y dibujaré una tabla de una columna de ese tamaño con cajas de texto en cada celda.
-       </div>
-    
+        </div>
         <form name="formulario" action="<?= $this->crearRuta(["accion"=>"paso2"]) ?>" method="get">
             <fieldset style="border: solid; border-color: gray; height: 15%;">
-                <legend style="border: solid; border-color: gray; background-color: white;">Ejercicio 1</legend>
+                <legend style="border: solid; border-color: gray; background-color: white; margin-left: 20px;">Ejercicio 1</legend>
                 <div>
-                    <label for="ttabla">Tamaño de la tabla</label>
-                    <input name="ttabla" id="ttabla" type="number" required placeholder="Introduce un numero" />
-                    <div style="float: right;">
+                    <label for="ttabla" style="margin-left: 10px;">Tamaño de la tabla</label>
+                    <input name="ttabla" id="ttabla" type="number" required placeholder="Introduce un numero" min="1" max="10" style="margin-top: 20px;"/>
+                    <div style="float: right; margin-right: 10px; margin-top: 35px;">
                         <button name="dibujar" value="1">Dibujar</button>
-                        <button name="restablecer" value="1">Restablecer</button>
+                        <button name="restablecer" type="reset">Restablecer</button>
                     </div>
                 </div>
             </fieldset>
-
-            <hr>
-            <div>
-                Esta página forma parte del curso Desarrollo de aplicaciones con tecnologias Web
-            </div>
-            <br />
-            <br />
-            Autor: Oscar Megía
-
         </form>
     </div>
 </div>

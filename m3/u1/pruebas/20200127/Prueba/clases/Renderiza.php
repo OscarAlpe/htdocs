@@ -17,12 +17,16 @@ class Renderiza {
     public function dibuja() {
         $salida="";
         
+        $salida.='<div style="margin-top: 20px;"';
         for ($i=0; $i<$this->tTabla; $i++) {
-            $salida.='<div style="margin-bottom:5px; margin-top: 5px;">';
+            $salida.='<div style="margin-bottom: 5px; margin-top: 10px;">';
+            $salida.='<span style="margin-left: 10px; margin-right: 10px;">';
             $salida.='<label for="c'.$i.'">'.$i.'</label>';
-            $salida.='<input name="c'.$i.'" id="c'.$i.'" type="text" />';
+            $salida.='</span>';
+            $salida.='<input name="numeros[]" id="c'.$i.'" type="text" />';
             $salida.='</div>';
         }
+        $salida.='</div>';
         
         return $salida;
     }
