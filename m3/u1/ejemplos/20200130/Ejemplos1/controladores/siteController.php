@@ -3,6 +3,7 @@
 namespace controladores;
 
 use clases\Numeros;
+use clases\Dado;
 
 class siteController extends Controller{
     private $miPie;
@@ -14,6 +15,7 @@ class siteController extends Controller{
         $this->miMenu = [
                           "Ejercicio 1"=>$this->crearRuta(["accion"=>"ejercicio1"]),
                           "Ejercicio 2"=>$this->crearRuta(["accion"=>"ejercicio2"]),
+                          "Ejercicio 3"=>$this->crearRuta(["accion"=>"ejercicio3"]),
                         ];
     }
 
@@ -70,6 +72,22 @@ class siteController extends Controller{
             "producto"=>$producto,
             "cociente"=>$cociente,
             "division"=>$division,
+        ]);
+    }
+
+    public function ejercicio3Accion($objeto){
+        $valorLetras = "<br />";
+        
+        if (!empty($objeto->getValores())) {
+            $d = new Dado();
+            $valorLetras = $d->tirada();
+        }
+        
+        $this->render([
+            "vista"=>"ejercicio3",
+            "pie"=>$this->miPie,
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 3"))->html(),
+            "salida"=>$valorLetras,
         ]);
     }
 
