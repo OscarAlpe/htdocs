@@ -45,4 +45,8 @@ class Dado {
         
         return $salida;
     }
+    
+    public function dibuja($p) {
+        return '<img src="' .$p . '/imagenes/'.$this->valorDado.'.svg">';
+    }
 }
