@@ -23,7 +23,7 @@ class Controller {
     
     public function crearRuta($a){
         $valores= array_replace([
-            "accion"=>"index",
+            "accion"=>"ejercicio1",
             "controlador"=>"site"
         ], $a);
         

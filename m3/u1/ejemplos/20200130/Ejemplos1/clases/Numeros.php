@@ -19,4 +19,21 @@ class Numeros {
     public function suma() {
         return $this->numero1 + $this->numero2;
     }
+    
+    public function resta() {
+        return $this->numero1 - $this->numero2;
+    }
+    
+    public function producto() {
+        return $this->numero1 * $this->numero2;
+    }
+
+    public function cociente() {
+        return $this->numero1 % $this->numero2;
+    }
+    
+    public function division() {
+        return $this->numero1 / $this->numero2;
+    }
+
 }

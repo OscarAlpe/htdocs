@@ -1,5 +1,5 @@
 <div>
-    <form name="formulario" action="<?= $this->crearRuta(["accion"=>"index"]) ?>" method="get">
+    <form name="formulario" action="<?= $this->crearRuta(["accion"=>"ejercicio1"]) ?>" method="get">
         <div>
             <div style="margin-left: 10px;">
                 Problema 01

@@ -23,7 +23,7 @@ class Aplicacion {
         $parametros = $_SERVER["PHP_SELF"];
         if ($parametros == $_SERVER["SCRIPT_NAME"]) {
             $this->controlador = "site";
-            $this->accion = "index";
+            $this->accion = "ejercicio1";
         } else {
             $longitud = strlen($_SERVER["SCRIPT_NAME"]);
             $parametros = substr($parametros, $longitud);
