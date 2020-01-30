@@ -16,7 +16,11 @@ class siteController extends Controller{
                           "Ejercicio 1"=>$this->crearRuta(["accion"=>"ejercicio1"]),
                           "Ejercicio 2"=>$this->crearRuta(["accion"=>"ejercicio2"]),
                           "Ejercicio 3"=>$this->crearRuta(["accion"=>"ejercicio3"]),
+                          "Ejercicio 4"=>$this->crearRuta(["accion"=>"ejercicio4"]),
                         ];
+        if (!isset($_SESSION["tiradas"])) {
+            $_SESSION["tiradas"] = "";
+        }
     }
 
     public function ejercicio1Accion($objeto){
@@ -88,6 +92,20 @@ class siteController extends Controller{
             "pie"=>$this->miPie,
             "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 3"))->html(),
             "salida"=>$valorLetras,
+        ]);
+    }
+
+    public function ejercicio4Accion($objeto){
+        if (!empty($objeto->getValores())) {
+            $d = new Dado();
+            $_SESSION["tiradas"] .= $d->tirada() . ", ";
+        }
+
+        $this->render([
+            "vista"=>"ejercicio4",
+            "pie"=>$this->miPie,
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 4"))->html(),
+            "salida"=>$_SESSION["tiradas"],
         ]);
     }
 
