@@ -20,6 +20,7 @@ class siteController extends Controller{
                           "Ejercicio 4"=>$this->crearRuta(["accion"=>"ejercicio4"]),
                           "Ejercicio 5"=>$this->crearRuta(["accion"=>"ejercicio5"]),
                           "Ejercicio 6"=>$this->crearRuta(["accion"=>"ejercicio6"]),
+                          "Ejercicio 7"=>$this->crearRuta(["accion"=>"ejercicio7"]),
                         ];
         if (!isset($_SESSION["tiradas"])) {
             $_SESSION["tiradas"] = "";
@@ -134,7 +135,28 @@ class siteController extends Controller{
         $this->render([
             "vista"=>"ejercicio6",
             "pie"=>$this->miPie,
-            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 4"))->html(),
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 6"))->html(),
+            "salida"=>$d,
+        ]);
+    }
+
+    public function ejercicio7Accion($objeto){
+        $d = "";
+        $vista="ejercicio7";
+        
+        if (!empty($objeto->getValores())) {
+            $num = $objeto->getValores()["numeroCirculos"];
+            $c = new Circulos($num);
+        
+            $d = $c->dibuja();
+            $vista="ejercicio7dibujar";
+        }
+
+        
+        $this->render([
+            "vista"=>$vista,
+            "pie"=>$this->miPie,
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 7"))->html(),
             "salida"=>$d,
         ]);
     }

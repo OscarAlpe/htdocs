@@ -8,29 +8,44 @@ namespace clases;
  * @author Oscar
  */
 class Circulos {
+    private $numeroCirculos;
+    private $ancho;
+    private $alto;
+    
+    public function __construct($n = 3, $an = 1080, $al = 430) {
+        $this->numeroCirculos = $n;
+        $this->ancho = $an;
+        $this->alto = $al;
+    }
     
     public function dibuja() {
-        $r1 = rand(50, 150);
-        $r2 = rand(50, 150);
-        $r3 = rand(50, 150);
+        $r = [];
+        $acum = 0;
+        $xMedio = 0;
         
-        $y = 400 - max([$r1, $r2, $r3]);
-        $x2 = 600;
-        $x1 = $x2 - $r2 - $r1;
-        $x3 = $x2 + $r2 + $r3;
+        for ($i=0; $i<$this->numeroCirculos; $i++) {
+            $r[] = rand(50, 150);
+        }
+        
+        $xMedio = array_sum($r) * 2;
+        $acum = ($this->ancho - $xMedio) / 2;
+        
+        for ($i=0; $i<count($r); $i++) {
+            $acum += $r[$i] + (isset($r[$i-1]) ? $r[$i-1] : 0);
+            $x[] = $acum;
+        }
                 
-        $f = file_get_contents(dirname(__FILE__) . "/circulos.inc");
-        $f = str_replace("{{r1}}", $r1, $f);
-        $f = str_replace("{{cx1}}", $x1, $f);
-        $f = str_replace("{{cy1}}", $y, $f);
-
-        $f = str_replace("{{r2}}", $r2, $f);
-        $f = str_replace("{{cx2}}", $x2, $f);
-        $f = str_replace("{{cy2}}", $y, $f);
-
-        $f = str_replace("{{r3}}", $r3, $f);
-        $f = str_replace("{{cx3}}", $x3, $f);
-        $f = str_replace("{{cy3}}", $y, $f);
+        $f = '<svg height="' . $this->alto . '" width="' . $this->ancho . '">';
+        for ($i=0; $i<count($r); $i++) {
+            $c = file_get_contents(dirname(__FILE__) . "/circulosCircle.inc");
+            $c = str_replace("{{r}}", $r[$i], $c);
+            $c = str_replace("{{cx}}", $x[$i], $c);
+            $c = str_replace("{{cy}}", "50%", $c);
+            $color = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
+            $c = str_replace("{{color}}", $color, $c);
+            $f .= $c;
+        }
+        $f .= '</svg>';
         
         return $f;
     }
