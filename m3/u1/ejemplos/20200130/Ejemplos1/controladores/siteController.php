@@ -4,6 +4,7 @@ namespace controladores;
 
 use clases\Numeros;
 use clases\Dado;
+use clases\Circulos;
 
 class siteController extends Controller{
     private $miPie;
@@ -18,6 +19,7 @@ class siteController extends Controller{
                           "Ejercicio 3"=>$this->crearRuta(["accion"=>"ejercicio3"]),
                           "Ejercicio 4"=>$this->crearRuta(["accion"=>"ejercicio4"]),
                           "Ejercicio 5"=>$this->crearRuta(["accion"=>"ejercicio5"]),
+                          "Ejercicio 6"=>$this->crearRuta(["accion"=>"ejercicio6"]),
                         ];
         if (!isset($_SESSION["tiradas"])) {
             $_SESSION["tiradas"] = "";
@@ -121,6 +123,19 @@ class siteController extends Controller{
             "pie"=>$this->miPie,
             "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 4"))->html(),
             "salida"=>$_SESSION["tiradas"],
+        ]);
+    }
+
+    public function ejercicio6Accion(){
+        $c = new Circulos();
+        
+        $d = $c->dibuja();
+        
+        $this->render([
+            "vista"=>"ejercicio6",
+            "pie"=>$this->miPie,
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 4"))->html(),
+            "salida"=>$d,
         ]);
     }
 
