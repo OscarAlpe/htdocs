@@ -103,6 +103,8 @@ class siteController extends Controller{
         if (!empty($objeto->getValores())) {
             $d = new Dado();
             $_SESSION["tiradas"] .= $d->tirada() . ", ";
+        } else {
+            $_SESSION["tiradas"] = "";
         }
 
         $this->render([
@@ -117,12 +119,14 @@ class siteController extends Controller{
         if (!empty($objeto->getValores())) {
             $d = new Dado();
             $_SESSION["tiradas"] .= $d->tirada() . $d->dibuja(\clases\Aplicacion::$urlBase) . "<br />";
+        } else {
+            $_SESSION["tiradas"] = "";
         }
 
         $this->render([
             "vista"=>"ejercicio5",
             "pie"=>$this->miPie,
-            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 4"))->html(),
+            "menu"=>(new \clases\Menu($this->miMenu, "Ejercicio 5"))->html(),
             "salida"=>$_SESSION["tiradas"],
         ]);
     }
